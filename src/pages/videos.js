@@ -1,23 +1,51 @@
-import React, {Component} from 'react'
-import {Link} from 'react-router-dom'
+import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
 export default class Video extends Component {
     constructor() {
         super();
         this.state = {
-            video1: '6WNqJixasGA',
-            video2: '_2ASPUkkHMs',
-            video3: 'paG1-lPtIXA',
-            video4: 'tMgSvn2kKlk',
-            video5: 'gR9izDp89c0',
-            video6: 'eybZtDx6tAU',
+            videos: [
+                {
+                    id: '6WNqJixasGA',
+                    name: 'Video 1'
+                },
+                {
+                    id: '_2ASPUkkHMs',
+                    name: 'Video 2'
+                },
+                {
+                    id: 'paG1-lPtIXA',
+                    name: 'Video 3'
+                },
+                {
+                    id: 'tMgSvn2kKlk',
+                    name: 'Video 4'
+                },
+                {
+                    id: 'gR9izDp89c0',
+                    name: 'Video 5'
+                },
+                {
+                    id: 'eybZtDx6tAU',
+                    name: 'Video 6'
+                }
+            ]
         }
     }
-    
+
     render() {
+        const mappedVideos = this.state.videos.map((val, index) => {
+            return (
+                <div key={index}>
+                <Link to={`/videos/${val.id}`}><button>{val.name}</button></Link>
+                </div>
+            )
+        })
         return (
             <div>
                 <h1>Video Playlist Page</h1>
+                {mappedVideos}
             </div>
         )
     }
