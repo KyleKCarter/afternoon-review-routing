@@ -44,7 +44,8 @@ export default class Video extends Component {
         })
         return (
             <div>
-                <h1>Video Playlist Page</h1>
+                <h1>Comedy Playlist Page</h1>
+                <p>Viewer discretion is advised</p>
                 {mappedVideos}
             </div>
         )
